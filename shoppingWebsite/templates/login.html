@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container mt-5" style="margin-top:200px !important">
+    <div class="card mt-5 col-6">
+        <div class="mt-5 card-body">
+            <h1 class="center">Login</h1>
+            <form action="" class="form" method="post">{% csrf_token %}
+                email<input class="form-control" type="text" name="email" id="email">
+                password<input class="form-control" type="password" name="password">
+                <!-- confirm password<input class="form-control" type="password" name="confirm_password"> -->
+              
+                  <div class="form-group">
+                <button class="col-sm-6 btn btn-secondary rounded-pill mt-3" type="submit">Login</button>
+                <small class="float-right text-muted"><a href="{% url 'password_reset' %}" class="text-dark"> Forgotten Password?</a></small>
+
+                </div>
+            </form>
+            <a href="{% url 'register'%}">register</a>
+        </div>
+    </div>
+</main>
+{% endblock %}

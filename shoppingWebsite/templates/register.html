@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="container mt-5" style="margin-top:200px !important">
+    <div class="card mt-5 col-6">
+        <div class="mt-5 card-body">
+            <h1 class="center">Register</h1>
+            <form action="" class="form" method="post">{% csrf_token %}
+                first name<input class="form-control" type="text" name="fname" id="fname"> 
+                last name<input class="form-control" type="text" name="lname" id="lname">
+                email<input class="form-control" type="text" name="email" id="email">
+                password<input class="form-control" type="password" name="password">
+                confirm password<input class="form-control" type="password" name="confirm_password">
+                <input class="form-control mt-2" type="submit" value="submit">
+            </form>
+            <a href="{% url 'login' %}">login</a>
+        </div>
+    </div>
+</main>
+{% endblock %}
