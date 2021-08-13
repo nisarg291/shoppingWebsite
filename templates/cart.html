@@ -1,0 +1,196 @@
+{% extends 'base.html'%}
+{% load static %}
+{%block title%}24care{% endblock %}
+{%block style%}
+{% endblock %}
+{% block content %}
+
+<main class="container mt-5 ml-5 ml-md-auto justify-content-center" id="main">
+          <div class="row col-12 mt-5 ml-md-auto justify-content-center" id="container">
+           <input type="hidden" id="count" value={{count}}>
+        
+            {% for c in cart %}
+        <div class="card mt-5 mr-3 ml-3 col-2.5"><center>
+
+            <input type="hidden" name="product_id" id="product_id" value={{c.product_id.id}} >
+            <input type="hidden" name="product_price" class="product_price" id="product_price{{forloop.counter}}" value={{c.product_id.product_price}}>
+            <input type="hidden" class="product_quantity" id="product_quantity{{forloop.counter}}" value={{c.quantity}} readonly>
+              <a class="category_name" href="https://www.netmeds.com/non-prescriptions/{{c.product_id.product_name}}" title="{{c.product_id.product_name}}"><img src='/media/{{c.product_id.product_image}}' style="height:300px !important;width:500px !important;" id="imgpr{{c.product_id.id}}" class="card-img-top pr-img" alt="..."></a>
+            <div class="card-body">
+                <h4><span class="badge badge-pill badge-primary">{{c.product_id.product_sitename}}</span></h4>
+                <a href="`+site[i]+`" class="nounderline len1 l1"><span class="card-title mb-3 price text-dark" id="namepr"><b>{{c.product_id.product_name}}</b></span></a><br/>
+                <a href="`+site[i]+`" class="nounderline price text-dark">type: <span class="mb-3" id="namepr">{{c.product_id.product_type}}</span></a>
+                <a href="`+site[i]+`" class="nounderline l1 mb-2 text-dark"> <p class="card-text mt-2" style="font-size:1.3rem">mfr:{{c.product_id.product_manufacture}}</p></a>
+                <p class="card-text mt-2" style="font-size:1.3rem">Quantity:{{c.quantity}}</p>
+                <p class="card-text price text-dark" id="pricepr"+i>Price: Rs.<b class="prc">{{c.product_id.product_price}}</b></p>
+                <p class="card-text price text-dark" id="pricepr"+i>Total Price(price*quantity): Rs.<b class="prc" id="price{{forloop.counter}}"></b></p>
+                <!-- <a href="product/{{c.product_id.id}}" class="b1 mt-3"><button id="qv" class="btn btn-primary cart mt-2">View Item</button></a> -->
+                <!-- <a href="" class="b1 mt-3"><button id="qv" class="btn btn-primary cart mt-2">view product</button></a> -->
+            </div></center>
+          </div>
+    
+    {% endfor %}
+    
+    <div class="" style="clear:left;width:100%;text-align:center;">TotalPrice:<div id="totalprice" ></div></div>
+    <a class="btn btn-primary" href="{% url 'address'%}">go For Address</a>
+    </div>
+</main>
+{% endblock %}
+{% block js %}
+<script>
+var count=parseInt(document.getElementById('count').value);
+var product_price=document.getElementsByClassName('product_price');
+console.log(product_price)
+var product_quantity=document.getElementsByClassName('product_quantity');
+var price=document.getElementsByClassName('prc');
+console.log(product_quantity)
+let totalprice=0;
+for(let i=0;i<product_price.length;i++){
+    pr=parseInt(product_price[i].getAttribute('value'));
+    qn=parseInt(product_quantity[i].getAttribute('value'));
+    console.log(pr);
+    console.log(qn);
+    
+    totalprice+=pr*qn;
+    $("#price"+(i+1)).text(pr*qn);
+
+    console.log(pr*qn);
+    //price.innerHTML=toString(pr*qn);
+
+}
+let totprice=document.getElementById('totalprice');
+totprice.innerHTML=totalprice;
+  $('#popcart').popover();
+    let prod=(document.getElementsByClassName('prodnames'));
+    let prodid=(document.getElementsByClassName('prodids'));
+    let prodprices=(document.getElementsByClassName('prodprices'));
+    let prodimages=(document.getElementsByClassName('prodimages'));
+    let quantity=(document.getElementsByClassName('quantity'));
+    console.log(prod);
+    console.log(prodprices);
+   
+    console.log(quantity);
+    str="";
+    let totPrice=0;
+    str+=`<table style='border:1px solid black;'><center><tr style='border:1px solid black'><th style="border:'1px solid black'""> Name </th><th style="border:1px solid black">Quantity</th><th> Price </th></tr>`;
+    for(let i=0;i<prod.length;i++){
+        let prd=prod[i].getAttribute('value');
+        str1="";
+        for(j=0;j<prd.length;j++){
+
+            if(prd[j]=='_')
+            {
+                prd[j]==' ';
+                str1+=' ';
+            }
+            else{
+                str1+=prd[j];
+            }
+        }
+        prc="";
+        for(j=0;j<prodprices[i].length;j++){
+        if(prodprices[i][j]==',')
+        {
+            prc+="";
+            prodprices[i][j]=="";
+        }
+        else{
+            prc=prodprices[i][j];
+        }
+    }
+        const pop1 = document.querySelector('#popcart');
+        const price=parseInt(quantity[i].getAttribute('value'))*parseInt(prodprices[i].getAttribute('value'));
+        totPrice+=price;
+        str+=`<tr style='border:1px solid black'><td style="border:1px solid black;font-size:10px;color:#222222;"><b>`+str1+`</b></td><td style="border:1px solid black;font-size:10px;"><div id="qnt`+i+`"><input type="hidden" id="prid`+i+`" value="`+prodid[i].getAttribute('value')+`"><button class="btn btn-primary" onclick="plus(`+i+`);">+</button><div id="quantity`+i+`">`+quantity[i].getAttribute('value')+`</div><button class="btn btn-primary" id="min`+i+`" onclick="minus(`+i+`);">-</button></div></td><input type="hidden" class="pr" id="prc`+i+`" value="`+price+`"><td style="font-size:8px;border:1px solid black" class="prc" id="price`+i+`">`+price+`</td></tr>`;
+        str+='<br>';
+    }
+    str+=`<tr><td><button id="addtocart" onclick="addtocart();">Add To Cart</button></td><td>Total Price: </td><td id="totalPrice">`+totPrice+`</td></tr></center></table>`;
+    console.log(str);
+    count=1;
+    function address(){
+        window.location.href="address/";
+    }
+    function minus(id){
+        qnt=document.getElementById('qnt'+(id));
+        quantity=document.getElementById('quantity'+(id));
+        min=document.getElementById('min'+(id));
+        prid=document.getElementById('prid'+id);
+        price=document.getElementById('price'+id);
+        if(quantity.innerHTML>2){
+           // console.log(quantity.value)
+            console.log(quantity.innerHTML);
+            quantity.innerHTML=parseInt(parseInt(quantity.innerHTML)-1);
+        }  
+        else{
+            if(quantity.innerHTML==2){
+                quantity.innerHTML=parseInt(parseInt(quantity.innerHTML)-1);
+            }
+               // alert();
+                qnt.innerHTML='<button id="" onclick="plus('+id+');" class="btn btn-primary  mt-2">+</button><span id="quantity='+toString(id)+'" class="b1 mt-3 ml-3 mr-3"> '+ quantity.innerHTML +' </span><button id="min'+id+'" style="" onclick="minus('+id+')" class="btn btn-primary mt-2" disabled>-</button>';
+        }    
+        $.ajax({
+            url:"{% url 'updateCart' %}",
+            data:{'id':prid.value,'quant':quantity.innerHTML},
+            success:function(result){
+            alert(result);
+            $("#price"+id).text(result);
+           // document.getElementById("pr"+id).value=result;
+            $('#totalPrice').text(totalPrice());
+            }
+
+        });
+    }
+    function addtocart(){
+        window.location.href="/cart";
+    }
+    function totalPrice(){
+        var sumPrice=0
+        for(let i=0;i<prod.length;i++){
+        sumPrice+=parseInt($("#price"+i).text());
+        //sumPrice+=parseInt($("#price1").text());
+            }
+        console.log(sumPrice);
+        return sumPrice;
+    }
+    function plus(id){
+        console.log(id);
+//        alert();  
+        qnt=document.getElementById('qnt'+(id));
+        console.log(qnt);
+        quantity=document.getElementById('quantity'+(id));
+        console.log(quantity)
+        min=document.getElementById('min'+(id));
+        console.log(min)
+        prid=document.getElementById('prid'+id);
+        price=document.getElementById('price'+id);
+        if(count==0){
+        // quantity.value=2; 
+        quantity.innerHTML='2';
+        $('#min').prop('disabled',false);
+        min.style.display="";
+        //qnt.innerHTML+='<button id="min" style="display:none" onclick="minus()" class="btn btn-primary mt-2">-</button>'
+        } 
+        else{
+           // console.log(quantity.value)
+           $('#min').prop('disabled',false);
+            console.log(quantity.innerHTML);
+            quantity.innerHTML=parseInt(parseInt(quantity.innerHTML)+1); 
+            //qnt.innerHTML='<button id="qv" onclick="plus();" class="btn btn-primary mt-2">+</button><span id="quantity" class="b1 mt-3 ml-3 mr-3"> '+quantity.innerHTML+' </span><button id="min" style="" onclick="minus()" class="btn btn-primary mt-2">-</button>';
+
+        }      
+        $.ajax({
+            url:"{% url 'updateCart' %}",
+            data:{'id':prid.value,'quant':quantity.innerHTML},
+            success:function(result){
+            alert(result);
+            $("#price"+id).text(result);
+            //document.getElementById("pr"+id).value=result;
+            $('#totalPrice').text(totalPrice());
+            //document.getElementById('totalPrice').innerHTML=toString(totalPrice());
+            }
+        });
+        count=count+1;
+
+    }
+</script>
+{%endblock%}

@@ -1,0 +1,554 @@
+{% extends 'base.html' %}
+{%block title%}24care{% endblock %}
+{%block style%}
+#pageIndex{
+
+}
+.cart{
+    display:absolute;
+    bottom:10px;
+}
+#main{
+    margin-top:100px !important;
+}
+.card{
+            margin-left:10px;
+            margin-right:10px;
+            width:15vw;
+            //height:50vh;
+            background-color:lightGrey;
+            border-radius:15px;
+         }
+  .col-md-3 img{
+          width: 10vw;
+          height: 25vh;
+          }
+
+.brand{
+font-size:30px;
+}
+.bi{
+border-radius: .0rem !important;
+}
+.search{
+        width:1000px;
+        height:50px;
+}
+@media (min-width:1250px){
+            #pageIndex{
+                margin-left:47rem;
+            }
+header::before{
+            background: url('https://source.unsplash.com/collection/190727/1600x1000') repeat center fixed;
+            //background-color:lightGreen;
+            background-attachment:fixed;
+            background-size:cover;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 105vw;
+            height:300vh;
+            z-index: -1;
+            opacity:0.6;
+        }
+            html{
+            font-size:10px;
+            }
+            .col-md-3 img{
+          width: 10vw;
+          height: 25vh;
+          }
+        .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    width: 40rem !important;
+    font-size: 1.27rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .0rem !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+        .pr-img{
+            border-radius:15px;
+            height:10vw;
+            width:14.9vw;
+        }
+    .cart{
+    display:absolute !important;
+    bottom:10px !important;
+    }
+        .b1{
+            display:absolute;
+            bottom:2rem;
+            }
+        .price{
+            font-size:2rem;
+        }
+        #n1{
+            height:7vh;
+            font-size:15px;
+            }
+        .card{
+            margin-left:10px;
+            margin-right:10px;
+            width:15vw;
+            //height:50vh;
+            background-color:lightGrey;
+            border-radius:15px;
+         }
+        .len1{
+            height:2.2rem;
+            font-size:1.5rem;
+            }
+            .len2{
+            height:1.7rem;
+            }
+}
+        @media (min-width:1000px) and (max-width:1250px){
+            html{
+            font-size:11px;
+            }
+ .cart{
+    display:absolute !important;
+    bottom:10px !important;
+    }
+            header::before{
+            background: url('https://source.unsplash.com/collection/190727/1600x1000') repeat center fixed;
+            //background-color:lightGreen;
+            background-attachment:fixed;
+            background-size:cover;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 110vw;
+            height:300vh;
+            z-index: -1;
+            opacity:0.6;
+        }
+        #pageIndex{
+        margin-left:23rem;
+        }
+        .price{
+            font-size:2rem;
+        }
+        .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    width: 30rem !important;
+    font-size: 1.27rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .0rem !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+        #n1{
+            height:5vh;
+            font-size:15px;
+            }
+        .col-md-3 img{
+          width: 10vw;
+          height: 20vh;
+          }
+        .pr-img{
+            border-radius:10px;
+            width: 17vw;
+          height: 20vh;
+        }
+        .b1{
+            display:relative;
+            bottom:2rem;
+            }
+        .price{
+            font-size:1.7rem !important;
+        }
+        .card{
+            margin-left:10px;
+            margin-right:10px;
+            width:18vw;
+            //height:50vh;
+            background-color:lightGrey;
+            border-radius:20px;
+         }
+        .len1{
+            height:2.2rem;
+            font-size:1.5rem;
+            }
+        .len2{
+            height:1.7rem;
+            }
+}
+@media(min-width:600px) and (max-width:1000px){
+            html{
+            font-size:9px;
+            }
+ .cart{
+    display:absolute !important;
+    bottom:10px !important;
+    }
+            #pageIndex{
+            margin-left:20rem;
+            }
+            .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    width: 30rem !important;
+    font-size: 1.27rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .0rem !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+        .col-md-3 img{
+          width: 10vw;
+          height: 18vh;
+          }
+        .pr-img{
+            border-radius:10px;
+            width: 15vw;
+            height: 15vh;
+        }
+        .b1{
+            display:relative;
+            top:300px;
+            bottom:2rem;
+            }
+        .price{
+            font-size:1.5rem !important;
+        }
+        .card{
+            margin-left:1rem;
+            margin-right:1rem;
+            width:18vw;
+            //height:48vh;
+            background-color:lightGrey;
+            border-radius:10px;
+         }
+header::before{
+            background: url('https://source.unsplash.com/collection/190727/1600x1000') repeat center fixed;
+            //background-color:lightGreen;
+            background-attachment:fixed;
+            background-size:cover;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 115vw;
+            height:300vh;
+            z-index: -1;
+            opacity:0.6;
+        }
+        .len1{
+            height:1.5rem;
+            font-size:1.5rem;
+            }
+        .len2{
+            height:1.7rem;
+            }
+}
+@media(min-width:361px) and (max-width:600px){
+            html{
+            font-size:12px;
+            }
+            #pageIndex{
+            margin-left:10rem;
+            }
+            .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    width: 30rem !important;
+    font-size: 1.27rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .0rem !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+ .cart{
+    display:absolute !important;
+    bottom:10px !important;
+    }
+    .price{
+            font-size:1.5rem !important;
+        }
+        .col-md-3 img{
+          width: 90vw;
+          height: 30vh;
+          }
+        .pr-img{
+            border-radius:15px;
+            width: 49vw;
+          height: 25vh;
+        }
+        header::before{
+            background: url('https://source.unsplash.com/collection/190727/1600x1000') repeat center fixed;
+            //background-color:lightGreen;
+            background-attachment:fixed;
+            background-size:cover;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 115vw;
+            height:300vh;
+            z-index: -1;
+            opacity:0.6;
+        }
+        .card{
+           align-self:center;
+            margin-left:1rem;
+            margin-right:1rem;
+            width:50vw;
+            height:55vh;
+            background-color:lightGrey;
+            border-radius:15px;
+         }
+        .len1{
+            height:1.5rem;
+            font-size:1.5rem;
+            }
+        .len2{
+            height:1.7rem;
+            }
+}
+@media(min-width:300px) and (max-width:360px){
+            html{
+            font-size:10px;
+            }
+            #pageIndex{
+            margin-left:10rem;
+        }
+ .cart{
+    display:absolute !important;
+    bottom:10px !important;
+    }
+header::before{
+            {% comment %} background-color:; {% endcomment %}
+            background-color:lightPink;
+            background-attachment:fixed;
+            background-size:cover;
+            content: "";
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 115vw;
+            height:600vh;
+            z-index: -1;
+            opacity:0.6;
+        }
+        .price{
+            font-size:1.5rem !important;
+        }
+        .form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    width: 30rem !important;
+    font-size: 1.27rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .0rem !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+        .col-md-3 img{
+          width: 90vw;
+          height: 30vh;
+          }
+        .pr-img{
+            border-radius:15px;
+            width: 49vw;
+          height: 25vh;
+        }
+        .b1{
+            display:relative;
+            bottom:2rem;
+            }
+       .card{
+           align-self:center;
+            margin-left:1rem;
+            margin-right:1rem;
+            width:50vw;
+            height:53vh;
+            background-color:lightGrey;
+            border-radius:15px;
+         }
+        .len1{
+            height:1.5rem;
+            font-size:1.5rem;
+            }
+        .len2{
+            height:1.7rem;
+            }
+}
+          .col-md-3
+          {
+          display: inline-block;
+          margin-left:-4px;
+          }
+
+        a.nounderline
+        {
+        color:black;
+        text-decoration:none;
+        }
+        a:hover{color:blue;}
+        .len2{
+            height:1.7em;
+        }
+          .carousel-indicators .active {
+          background-color: blue;
+            }
+
+          body .carousel-indicator li{
+          background-color: blue;
+          }
+          body .carousel-indicators{
+          bottom: -4rem;
+          }
+.carousel-indicators li {
+    background-color: blue;
+}
+          body .carousel-control-prev-icon,
+          body .carousel-control-next-icon{
+          background-color: blue;
+          }
+          .carousel-control-prev,
+          .carousel-control-next{
+          top: auto;
+          bottom: auto;
+          padding-top: 20rem;
+          }
+
+           body .no-padding{
+           padding-left: 0,
+           padding-right: 0;
+           }
+    .container-fluid{
+    margin-right:-10rem;
+    }
+{% endblock %}
+{% block content %}
+<main class="container mt-5 ml-5 ml-md-auto justify-content-center" id="main">
+        <input type="hidden" value="{{product_name}}" id="product_name">
+         <input type="hidden" value="{{product_sitename}}" id="product_sitename">
+        <input type="hidden" value="{{product_price}}" id="product_price">
+        <input type="hidden" value="{{product_image}}" id="product_image">
+        <input type="hidden" value="{{product_type}}" id="product_type">
+        <input type="hidden" value="{{manufacture}}" id="manufacture">
+        <input type="hidden" value="{{label}}" id="label">
+        <input type="hidden" value="{{site}}" id="site">
+        <input type="hidden" value="{{start}}" id="start">
+        <input type="hidden" value="{{end}}" id="end">
+        <input type="hidden" value="{{nextPage}}" id="nextPage">
+        <input type="hidden" value="{{lastPage}}" id="lastPage">
+        <div class="row col-12 mt-5 ml-md-auto justify-content-center" id="container">
+        </div>
+
+</main>
+
+{% endblock %}
+
+{%block js%}
+<script>
+    product_name=eval(document.getElementById('product_name').value);
+    product_sitename=eval(document.getElementById('product_sitename').value);
+    product_price=eval(document.getElementById('product_price').value);
+    product_image=eval(document.getElementById('product_image').value);
+    product_type=eval(document.getElementById('product_type').value);
+    manufacture=eval(document.getElementById('manufacture').value);
+    label=eval(document.getElementById('label').value);
+    site=eval(document.getElementById('site').value);
+    start=parseInt(document.getElementById('start').value);
+    end=parseInt(document.getElementById('end').value);
+    nextPage=parseInt(document.getElementById('nextPage').value);
+    lastPage=parseInt(document.getElementById('lastPage').value);
+    container=document.getElementById('container');
+
+    for(var i=0;i<=9;i++)
+    {
+        if(product_image[i]==undefined){
+        product_image[i]="https://res.cloudinary.com/du8msdgbj/image/upload/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/v1479378261/blank_otc_uobogo.png";
+        }
+        if(manufacture[i]==undefined){
+            continue;
+        }
+        container.innerHTML+=`<div class="card mt-3 mr-3 ml-3 col-2.5"><center>
+              <a href="`+site[i]+product_name[i]+`" class="li"><img src='`+product_image[i]+`' id="imgpr{{i}}" class="card-img-top pr-img" width="220px" height="250px" alt="..."></a>
+            <div class="card-body">
+                <h4><span class="badge badge-pill badge-primary">`+product_sitename[i]+`</span><span id="label`+i+`" class="badge badge-pill badge-primary">`+label[i]+`</span></h4>
+                <a href="`+site[i]+product_name[i]+`" class="nounderline"><h4 class="card-title" id="namepr{{i}}">`+product_name[i].slice(0,20)+`..</h4></a>
+                <a href="`+site[i]+product_name[i]+`" class="nounderline"> <p class="card-text ">mfr: `+manufacture[i].slice(0,10)+`..</p></a>
+                <p class="card-text price" id="pricepr{{i.id}}">Price:₹`+product_price[i]+`</p>
+                <p class="card-text" id="typepr{{i.id}}">type:₹`+product_type[i]+`</p>
+                <span id="divpr{{i.id}}" class="b1 divpr mt-4 cart align-items-center">
+                <a href="`+String(site[i])+`" class="mt-4"><button id="qv{{i.id}}" class="btn btn-primary">goto buy</button></a>
+                 </span>
+            </div></center></div>`;
+        if(label[i]=="no"){
+            document.getElementById("label"+i).style.display="none";
+        }
+
+    }
+    main.innerHTML+=`<nav aria-label=" col-12 Page navigation example"><ul class="col-12 pagination justify-content-center mt-5 mb-5" id="Index"></ul></nav>`;
+    if(nextPage<=lastPage && nextPage>=0){
+        if(nextPage-2>=0){
+        Index.innerHTML+=`<li class="page-item">
+      <a class="page-link text-dark font-weight-bold" href="SearchPage=`+(nextPage-2)+`">Previous</a>
+        </li>`;
+        
+        }
+        if(nextPage-3>=0){
+        Index.innerHTML+=`<li class="page-item"><a class="page-link  text-dark font-weight-bold" href="SearchPage=`+(nextPage-3)+`">`+(nextPage-3)+`</a></li>`;
+        }
+        if(nextPage-2>=0){
+        Index.innerHTML+=`<li class="page-item"><a class="page-link text-dark font-weight-bold" href="SearchPage=`+(nextPage-2)+`">`+(nextPage-2)+`</a></li>`;
+        }
+        if(nextPage-1>=0){
+        Index.innerHTML+=`<li class="page-item active"><a class="page-link text-dark font-weight-bold" href="SearchPage=`+(nextPage-1)+`">`+(nextPage-1)+`</a></li>`;
+        }
+        if(nextPage>=0 && nextPage<=lastPage){
+        Index.innerHTML+=`<li class="page-item"><a class="page-link text-dark font-weight-bold" href="SearchPage=`+(nextPage)+`">`+(nextPage)+`</a></li>`;
+        }
+        if(nextPage+1<=lastPage){
+        Index.innerHTML+=`<li class="page-item"><a class="page-link text-dark font-weight-bold" href="SearchPage=`+(nextPage+1)+`">`+(nextPage+1)+`</a></li>`;
+        }
+        
+        if(nextPage>=0){
+        Index.innerHTML+=`<li class="page-item"><a class="page-link text-dark font-weight-bold" href="SearchPage=`+(nextPage)+`">Next</a></li>`;
+        }
+    }
+    else{
+        if(nextPage-2>=0){
+            Index.innerHTML+=`<li class="page-item"><a class="page-link text-dark font-weight-bold" href="SearchPage=`+(nextPage-2)+`">Previous</a></li>`;
+        }
+        if(nextPage-3>=0){
+            Index.innerHTML+=`<li class="page-item"><a class="page-link text-dark font-weight-bold" href="SearchPage=`+(nextPage-3)+`">`+(nextPage-3)+`</a></li>`;
+        }
+        if(nextPage-2>=0){
+            Index.innerHTML+=`<li class="page-item"><a class="page-link text-dark font-weight-bold" href="SearchPage=`+(nextPage-2)+`">`+(nextPage-2)+`</a></li>`;
+        }
+       if(nextPage-1>=0){
+            Index.innerHTML+=`<li class="page-item"><a class="page-link text-dark font-weight-bold" href="SearchPage=`+(nextPage-1)+`">`+(nextPage-1)+`</a></li>`;
+       }    
+    }
+</script>
+{% endblock %}
